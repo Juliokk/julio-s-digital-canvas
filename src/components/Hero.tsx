@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowDown, Mail, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { EmailCopyButton } from "@/components/EmailCopyButton";
 import profilePhoto from "@/assets/profile-photo.jpeg";
 
 export const Hero = () => {
@@ -93,7 +94,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Button variant="hero" size="xl" asChild>
               <a href="mailto:juliorubiodev@gmail.com">
@@ -105,6 +106,11 @@ export const Hero = () => {
               {t.hero.viewWork}
             </Button>
           </motion.div>
+
+          {/* Email Copy Button */}
+          <div className="flex justify-center mb-10">
+            <EmailCopyButton variant="hero" />
+          </div>
 
           {/* Mobile Social Links (hidden on lg screens where sidebar shows) */}
           <motion.div

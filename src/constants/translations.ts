@@ -117,6 +117,10 @@ export const translations = {
       downloadResume: "Download Resume",
       copyright: "© 2024 Julio Rubio. Built with React & Love.",
     },
+    emailCopy: {
+      success: "Email copied to clipboard!",
+      error: "Failed to copy email",
+    },
   },
   es: {
     nav: {
@@ -235,6 +239,10 @@ export const translations = {
       contactMe: "Contáctame",
       downloadResume: "Descargar CV",
       copyright: "© 2024 Julio Rubio. Hecho con React y Amor.",
+    },
+    emailCopy: {
+      success: "¡Email copiado al portapapeles!",
+      error: "Error al copiar el email",
     },
   },
 } as const;
