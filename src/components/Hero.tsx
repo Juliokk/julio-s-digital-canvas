@@ -101,7 +101,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex justify-center gap-4 lg:hidden mb-16"
+            className="flex justify-center gap-4 lg:hidden"
           >
             <motion.a
               href="https://github.com/Juliorubiodev"
@@ -126,17 +126,18 @@ export const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator - Fixed at bottom of viewport */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.6 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="fixed bottom-8 left-1/2 -translate-x-1/2 z-20"
         >
           <motion.div
-            animate={{ y: [0, 12, 0] }}
+            animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center gap-2"
+            className="flex flex-col items-center gap-2 cursor-pointer"
+            onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
           >
             <span className="text-xs text-muted-foreground uppercase tracking-widest">Scroll</span>
             <ArrowDown className="w-5 h-5 text-muted-foreground" />

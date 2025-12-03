@@ -4,11 +4,23 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+// Placeholder project images - replace with actual screenshots
+const projectImages: Record<string, string> = {
+  "E-Commerce Platform": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+  "Plataforma E-Commerce": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+  "Task Management App": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+  "App de Gestión de Tareas": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+  "AI Content Generator": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
+  "Generador de Contenido IA": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
+  "Finance Dashboard": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+  "Dashboard Financiero": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+};
+
 export const Projects = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="projects" className="py-24 md:py-32 bg-secondary/30 relative">
+    <section id="projects" className="py-24 md:py-32 relative">
       <div className="container-wide section-padding">
         {/* Section Header */}
         <motion.div
@@ -19,7 +31,7 @@ export const Projects = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            {t.projects.title}
+            <span className="gradient-text">{t.projects.title}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             {t.projects.subtitle}
@@ -39,22 +51,27 @@ export const Projects = () => {
             >
               <motion.div
                 whileHover={{ y: -8 }}
-                className="h-full p-6 md:p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl group"
+                className="h-full rounded-2xl glass border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 group overflow-hidden"
               >
-                {/* Header */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <span className="text-2xl font-bold gradient-text">
-                      {project.title.charAt(0)}
-                    </span>
-                  </div>
-                  <div className="flex gap-2">
+                {/* Project Image */}
+                <div className="relative h-48 md:h-56 overflow-hidden">
+                  <motion.img
+                    src={projectImages[project.title] || "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.4 }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
+                  
+                  {/* Quick Action Buttons */}
+                  <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Button variant="ghost" size="icon" className="h-9 w-9">
+                      <Button variant="glass" size="icon" className="h-9 w-9 backdrop-blur-md">
                         <Github className="h-4 w-4" />
                       </Button>
                     </a>
@@ -64,7 +81,7 @@ export const Projects = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <Button variant="ghost" size="icon" className="h-9 w-9">
+                        <Button variant="glass" size="icon" className="h-9 w-9 backdrop-blur-md">
                           <ExternalLink className="h-4 w-4" />
                         </Button>
                       </a>
@@ -73,55 +90,57 @@ export const Projects = () => {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {project.description}
-                </p>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
+                    {project.description}
+                  </p>
 
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech: string, techIndex: number) => (
-                    <Badge
-                      key={techIndex}
-                      variant="secondary"
-                      className="text-xs font-medium"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
+                  {/* Tech Stack */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tech.map((tech: string, techIndex: number) => (
+                      <Badge
+                        key={techIndex}
+                        variant="secondary"
+                        className="text-xs font-medium bg-secondary/80"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
 
-                {/* Actions */}
-                <div className="flex gap-3 mt-6 pt-6 border-t border-border">
-                  <Button variant="outline" size="sm" asChild className="flex-1">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github className="h-4 w-4 mr-2" />
-                      {t.projects.viewCode}
-                    </a>
-                  </Button>
-                  {project.demo ? (
-                    <Button variant="default" size="sm" asChild className="flex-1">
+                  {/* Actions */}
+                  <div className="flex gap-3 pt-4 border-t border-border/50">
+                    <Button variant="outline" size="sm" asChild className="flex-1">
                       <a
-                        href={project.demo}
+                        href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        {t.projects.liveDemo}
+                        <Github className="h-4 w-4 mr-2" />
+                        {t.projects.viewCode}
                       </a>
                     </Button>
-                  ) : (
-                    <Button variant="default" size="sm" disabled className="flex-1">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      {t.projects.liveDemo}
-                    </Button>
-                  )}
+                    {project.demo ? (
+                      <Button variant="default" size="sm" asChild className="flex-1">
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          {t.projects.liveDemo}
+                        </a>
+                      </Button>
+                    ) : (
+                      <Button variant="default" size="sm" disabled className="flex-1">
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        {t.projects.liveDemo}
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             </motion.div>

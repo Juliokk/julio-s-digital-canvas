@@ -43,8 +43,8 @@ export const TechStack = () => {
           <div className="w-20 h-1 bg-primary mx-auto rounded-full mt-4" />
         </motion.div>
 
-        {/* Tech Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-4">
+        {/* Tech Grid - Responsive: 2 cols mobile, 3 tablet, 4 desktop, 8 large */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4">
           {technologies.map((tech, index) => (
             <motion.div
               key={tech.name}
