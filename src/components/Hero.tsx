@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Mail, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import profilePhoto from "@/assets/profile-photo.jpeg";
 
 export const Hero = () => {
   const { t } = useLanguage();
@@ -15,46 +16,28 @@ export const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Gradient Orbs */}
-        <motion.div
-          className="absolute top-1/4 -left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 -right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.5, 0.3, 0.5],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        
-        {/* Grid Pattern */}
-        <div 
-          className="absolute inset-0 opacity-[0.015] dark:opacity-[0.03]"
-          style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)`,
-            backgroundSize: '40px 40px',
-          }}
-        />
-      </div>
-
       <div className="container-wide section-padding relative z-10">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Profile Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-8 flex justify-center"
+          >
+            <div className="relative">
+              {/* Glow ring */}
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary via-accent to-primary opacity-75 blur-sm animate-pulse" />
+              <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-background shadow-xl">
+                <img
+                  src={profilePhoto}
+                  alt="Julio Rubio"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </motion.div>
+
           {/* Greeting */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -100,7 +83,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10"
           >
             <Button variant="hero" size="xl" asChild>
               <a href="mailto:juliorubiodev@gmail.com">
@@ -113,18 +96,18 @@ export const Hero = () => {
             </Button>
           </motion.div>
 
-          {/* Social Links */}
+          {/* Mobile Social Links (hidden on lg screens where sidebar shows) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex justify-center gap-4"
+            className="flex justify-center gap-4 lg:hidden mb-16"
           >
             <motion.a
               href="https://github.com/Juliorubiodev"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-secondary hover:bg-secondary/80 text-foreground transition-all hover:scale-110"
+              className="p-3 rounded-full bg-card/80 border border-border hover:border-primary/50 text-muted-foreground hover:text-primary transition-all shadow-lg"
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -134,7 +117,7 @@ export const Hero = () => {
               href="https://www.linkedin.com/in/juliocrubiom/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-secondary hover:bg-secondary/80 text-foreground transition-all hover:scale-110"
+              className="p-3 rounded-full bg-card/80 border border-border hover:border-primary/50 text-muted-foreground hover:text-primary transition-all shadow-lg"
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -151,10 +134,12 @@ export const Hero = () => {
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
           <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="flex flex-col items-center gap-2"
           >
-            <ArrowDown className="w-6 h-6 text-muted-foreground" />
+            <span className="text-xs text-muted-foreground uppercase tracking-widest">Scroll</span>
+            <ArrowDown className="w-5 h-5 text-muted-foreground" />
           </motion.div>
         </motion.div>
       </div>
