@@ -27,7 +27,7 @@ export const Projects = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
@@ -47,7 +47,7 @@ export const Projects = () => {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.1 }}
             >
               <motion.div
                 whileHover={{ y: -8 }}
@@ -113,7 +113,7 @@ export const Projects = () => {
 
                   {/* Actions */}
                   <div className="flex gap-3 pt-4 border-t border-border/50">
-                    <Button variant="outline" size="sm" asChild className="flex-1">
+                    <Button variant="outline" size="sm" asChild className="flex-1 h-10">
                       <a
                         href={project.github}
                         target="_blank"
@@ -124,7 +124,7 @@ export const Projects = () => {
                       </a>
                     </Button>
                     {project.demo ? (
-                      <Button variant="default" size="sm" asChild className="flex-1">
+                      <Button variant="default" size="sm" asChild className="flex-1 h-10">
                         <a
                           href={project.demo}
                           target="_blank"
@@ -135,7 +135,7 @@ export const Projects = () => {
                         </a>
                       </Button>
                     ) : (
-                      <Button variant="default" size="sm" disabled className="flex-1">
+                      <Button variant="default" size="sm" disabled className="flex-1 h-10">
                         <ExternalLink className="h-4 w-4 mr-2" />
                         {t.projects.liveDemo}
                       </Button>

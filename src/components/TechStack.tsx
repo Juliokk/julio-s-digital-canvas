@@ -31,7 +31,7 @@ export const TechStack = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
@@ -51,7 +51,7 @@ export const TechStack = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4, delay: index * 0.03 }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.03 }}
               whileHover={{ y: -8, scale: 1.05 }}
               className="group"
             >

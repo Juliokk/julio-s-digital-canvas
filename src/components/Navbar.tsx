@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Moon, Sun, Globe } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -78,15 +78,14 @@ export const Navbar = () => {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
-            {/* Language Toggle */}
+          {/* Language Toggle */}
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setLanguage(language === "en" ? "es" : "en")}
-              className="relative"
+              className="relative w-10 h-10"
             >
-              <Globe className="h-5 w-5" />
-              <span className="absolute -bottom-1.5 -right-1.5 text-[10px] font-bold bg-primary text-primary-foreground rounded-full w-5 h-5 flex items-center justify-center">
+              <span className="text-sm font-bold">
                 {language.toUpperCase()}
               </span>
             </Button>
