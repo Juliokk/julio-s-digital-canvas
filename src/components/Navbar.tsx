@@ -58,8 +58,8 @@ export const Navbar = () => {
           >
             <img 
               src="/assets/jr-logo.png" 
-              alt="Julio Rubio Logo" 
-              className="h-10 md:h-12 w-auto"
+              alt="Brand logo" 
+              className="h-9 md:h-11 w-auto"
             />
           </motion.button>
 
