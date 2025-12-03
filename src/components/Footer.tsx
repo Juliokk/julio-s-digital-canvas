@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
-import { Mail, Heart, Github, Linkedin } from "lucide-react";
+import { Mail, Heart, Github, Linkedin, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+
+const smoothTransition = {
+  duration: 0.7,
+  ease: "easeOut" as const,
+};
 
 export const Footer = () => {
   const { t } = useLanguage();
@@ -31,7 +36,7 @@ export const Footer = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
+            transition={smoothTransition}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               {t.footer.ready}
@@ -39,12 +44,20 @@ export const Footer = () => {
             <p className="text-lg md:text-xl text-muted-foreground mb-10">
               {t.footer.letsTalk}
             </p>
-            <Button variant="hero" size="xl" asChild>
-              <a href="mailto:juliorubiodev@gmail.com">
-                <Mail className="w-5 h-5 mr-2" />
-                {t.footer.contactMe}
-              </a>
-            </Button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button variant="hero" size="xl" asChild>
+                <a href="mailto:juliorubiodev@gmail.com">
+                  <Mail className="w-5 h-5 mr-2" />
+                  {t.footer.contactMe}
+                </a>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <a href="/Julio_Rubio_CV.pdf" download>
+                  <Download className="w-5 h-5 mr-2" />
+                  {t.footer.downloadResume}
+                </a>
+              </Button>
+            </div>
           </motion.div>
 
           {/* Social Links */}
@@ -52,7 +65,7 @@ export const Footer = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ ...smoothTransition, delay: 0.15 }}
             className="flex justify-center gap-4 mt-12"
           >
             <motion.a
@@ -82,7 +95,7 @@ export const Footer = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ ...smoothTransition, delay: 0.25 }}
             className="mt-16 pt-8 border-t border-border"
           >
             <p className="text-sm text-muted-foreground flex items-center justify-center gap-1">
