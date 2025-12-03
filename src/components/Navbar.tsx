@@ -56,11 +56,9 @@ export const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <img 
-              src="/assets/jr-logo.png" 
-              alt="Brand logo" 
-              className="h-9 md:h-11 w-auto"
-            />
+            <span className="text-2xl md:text-3xl font-bold gradient-text">
+              JR
+            </span>
           </motion.button>
 
           {/* Desktop Navigation */}
@@ -88,7 +86,7 @@ export const Navbar = () => {
               className="relative"
             >
               <Globe className="h-5 w-5" />
-              <span className="absolute -bottom-1 -right-1 text-[10px] font-bold bg-primary text-primary-foreground rounded-full w-4 h-4 flex items-center justify-center">
+              <span className="absolute -bottom-1.5 -right-1.5 text-[10px] font-bold bg-primary text-primary-foreground rounded-full w-5 h-5 flex items-center justify-center">
                 {language.toUpperCase()}
               </span>
             </Button>
