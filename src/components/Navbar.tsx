@@ -52,11 +52,15 @@ export const Navbar = () => {
           {/* Logo */}
           <motion.button
             onClick={() => scrollToSection("home")}
-            className="text-xl md:text-2xl font-bold gradient-text"
+            className="flex items-center"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            JR
+            <img 
+              src="/assets/jr-logo.png" 
+              alt="Julio Rubio Logo" 
+              className="h-10 md:h-12 w-auto"
+            />
           </motion.button>
 
           {/* Desktop Navigation */}
