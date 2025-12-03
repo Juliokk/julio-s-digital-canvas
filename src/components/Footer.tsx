@@ -45,13 +45,13 @@ export const Footer = () => {
               {t.footer.letsTalk}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="hero" size="xl" asChild>
+              <Button variant="hero" size="xl" asChild className="h-14 min-w-[200px]">
                 <a href="mailto:juliorubiodev@gmail.com">
                   <Mail className="w-5 h-5 mr-2" />
                   {t.footer.contactMe}
                 </a>
               </Button>
-              <Button variant="outline" size="lg" asChild>
+              <Button variant="outline" size="xl" asChild className="h-14 min-w-[200px]">
                 <a href="/Julio_Rubio_CV.pdf" download>
                   <Download className="w-5 h-5 mr-2" />
                   {t.footer.downloadResume}
