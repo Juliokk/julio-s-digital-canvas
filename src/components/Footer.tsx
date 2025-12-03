@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Mail, Heart, Github, Linkedin, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { EmailCopyButton } from "@/components/EmailCopyButton";
 
 const smoothTransition = {
   duration: 0.7,
@@ -57,6 +58,11 @@ export const Footer = () => {
                   {t.footer.downloadResume}
                 </a>
               </Button>
+            </div>
+            
+            {/* Email Copy Button */}
+            <div className="flex justify-center">
+              <EmailCopyButton variant="footer" />
             </div>
           </motion.div>
 
