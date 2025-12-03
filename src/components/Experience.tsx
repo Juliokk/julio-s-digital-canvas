@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Briefcase, GraduationCap } from "lucide-react";
+import { Briefcase, GraduationCap, ExternalLink, Award } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Button } from "@/components/ui/button";
 
 export const Experience = () => {
   const { t } = useLanguage();
@@ -71,9 +72,31 @@ export const Experience = () => {
                     {job.title}
                   </h3>
                   <p className="text-primary font-medium mb-3">{job.company}</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                     {job.description}
                   </p>
+                  
+                  {/* Action Buttons - Conditional rendering */}
+                  {(job.companyUrl || job.certificateUrl) && (
+                    <div className={`flex gap-2 flex-wrap ${index % 2 === 0 ? "md:justify-end" : "md:justify-start"}`}>
+                      {job.companyUrl && (
+                        <Button variant="outline" size="sm" asChild>
+                          <a href={job.companyUrl} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="w-3 h-3 mr-1" />
+                            {job.type === "work" ? "Company" : "Institution"}
+                          </a>
+                        </Button>
+                      )}
+                      {job.certificateUrl && (
+                        <Button variant="ghost" size="sm" asChild>
+                          <a href={job.certificateUrl} target="_blank" rel="noopener noreferrer">
+                            <Award className="w-3 h-3 mr-1" />
+                            Certificate
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                  )}
                 </motion.div>
               </div>
 

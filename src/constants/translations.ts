@@ -42,6 +42,8 @@ export const translations = {
           period: "2022 - Present",
           description: "Leading development of scalable web applications using React, Node.js, and cloud technologies. Mentoring junior developers and implementing best practices.",
           type: "work",
+          companyUrl: "https://example.com",
+          certificateUrl: "",
         },
         {
           title: "Full Stack Developer",
@@ -49,6 +51,8 @@ export const translations = {
           period: "2020 - 2022",
           description: "Built and maintained multiple client projects using modern JavaScript frameworks. Implemented CI/CD pipelines and improved deployment workflows.",
           type: "work",
+          companyUrl: "",
+          certificateUrl: "",
         },
         {
           title: "Frontend Developer",
@@ -56,6 +60,8 @@ export const translations = {
           period: "2019 - 2020",
           description: "Developed responsive user interfaces with React and Vue.js. Collaborated closely with designers to create pixel-perfect implementations.",
           type: "work",
+          companyUrl: "",
+          certificateUrl: "",
         },
         {
           title: "Computer Science Degree",
@@ -63,6 +69,8 @@ export const translations = {
           period: "2015 - 2019",
           description: "Bachelor's degree in Computer Science with focus on Software Engineering. Graduated with honors.",
           type: "education",
+          companyUrl: "https://example-university.edu",
+          certificateUrl: "https://example.com/certificate",
         },
       ],
     },
@@ -152,6 +160,8 @@ export const translations = {
           period: "2022 - Presente",
           description: "Liderando el desarrollo de aplicaciones web escalables usando React, Node.js y tecnologías cloud. Mentorizando desarrolladores junior e implementando mejores prácticas.",
           type: "work",
+          companyUrl: "https://example.com",
+          certificateUrl: "",
         },
         {
           title: "Desarrollador Full Stack",
@@ -159,6 +169,8 @@ export const translations = {
           period: "2020 - 2022",
           description: "Construí y mantuve múltiples proyectos de clientes usando frameworks JavaScript modernos. Implementé pipelines CI/CD y mejoré flujos de despliegue.",
           type: "work",
+          companyUrl: "",
+          certificateUrl: "",
         },
         {
           title: "Desarrollador Frontend",
@@ -166,6 +178,8 @@ export const translations = {
           period: "2019 - 2020",
           description: "Desarrollé interfaces de usuario responsivas con React y Vue.js. Colaboré estrechamente con diseñadores para crear implementaciones pixel-perfect.",
           type: "work",
+          companyUrl: "",
+          certificateUrl: "",
         },
         {
           title: "Licenciatura en Ciencias de la Computación",
@@ -173,6 +187,8 @@ export const translations = {
           period: "2015 - 2019",
           description: "Licenciatura en Ciencias de la Computación con enfoque en Ingeniería de Software. Graduado con honores.",
           type: "education",
+          companyUrl: "https://example-university.edu",
+          certificateUrl: "https://example.com/certificate",
         },
       ],
     },
