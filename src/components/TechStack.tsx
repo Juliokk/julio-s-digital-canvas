@@ -1,23 +1,48 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { 
+  SiReact, 
+  SiNextdotjs, 
+  SiTypescript, 
+  SiJavascript, 
+  SiNodedotjs, 
+  SiTailwindcss, 
+  SiPostgresql, 
+  SiMongodb, 
+  SiDocker, 
+  SiAmazonwebservices, 
+  SiGit, 
+  SiPython, 
+  SiVuedotjs, 
+  SiKotlin, 
+  SiFlutter, 
+  SiDart 
+} from "react-icons/si";
+import type { IconType } from "react-icons";
 
-const technologies = [
-  { name: "React", color: "#61DAFB" },
-  { name: "Next.js", color: "#000000" },
-  { name: "TypeScript", color: "#3178C6" },
-  { name: "JavaScript", color: "#F7DF1E" },
-  { name: "Node.js", color: "#339933" },
-  { name: "Tailwind CSS", color: "#06B6D4" },
-  { name: "PostgreSQL", color: "#4169E1" },
-  { name: "MongoDB", color: "#47A248" },
-  { name: "Docker", color: "#2496ED" },
-  { name: "AWS", color: "#FF9900" },
-  { name: "Git", color: "#F05032" },
-  { name: "Python", color: "#3776AB" },
-  { name: "Vue.js", color: "#4FC08D" },
-  { name: "Kotlin", color: "#7F52FF" },
-  { name: "Flutter", color: "#02569B" },
-  { name: "Dart", color: "#0175C2" },
+interface Technology {
+  name: string;
+  color: string;
+  Icon: IconType;
+}
+
+const technologies: Technology[] = [
+  { name: "React", color: "#61DAFB", Icon: SiReact },
+  { name: "Next.js", color: "#000000", Icon: SiNextdotjs },
+  { name: "TypeScript", color: "#3178C6", Icon: SiTypescript },
+  { name: "JavaScript", color: "#F7DF1E", Icon: SiJavascript },
+  { name: "Node.js", color: "#339933", Icon: SiNodedotjs },
+  { name: "Tailwind CSS", color: "#06B6D4", Icon: SiTailwindcss },
+  { name: "PostgreSQL", color: "#4169E1", Icon: SiPostgresql },
+  { name: "MongoDB", color: "#47A248", Icon: SiMongodb },
+  { name: "Docker", color: "#2496ED", Icon: SiDocker },
+  { name: "AWS", color: "#FF9900", Icon: SiAmazonwebservices },
+  { name: "Git", color: "#F05032", Icon: SiGit },
+  { name: "Python", color: "#3776AB", Icon: SiPython },
+  { name: "Vue.js", color: "#4FC08D", Icon: SiVuedotjs },
+  { name: "Kotlin", color: "#7F52FF", Icon: SiKotlin },
+  { name: "Flutter", color: "#02569B", Icon: SiFlutter },
+  { name: "Dart", color: "#0175C2", Icon: SiDart },
 ];
 
 export const TechStack = () => {
@@ -57,12 +82,13 @@ export const TechStack = () => {
             >
               <div className="p-4 md:p-5 rounded-xl bg-card/80 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 flex flex-col items-center justify-center aspect-square">
                 <div
-                  className="w-10 h-10 md:w-12 md:h-12 rounded-lg mb-3 flex items-center justify-center text-xl md:text-2xl font-bold transition-transform group-hover:scale-110"
+                  className="w-10 h-10 md:w-12 md:h-12 rounded-lg mb-3 flex items-center justify-center transition-transform group-hover:scale-110"
                   style={{ backgroundColor: `${tech.color}20` }}
                 >
-                  <span style={{ color: tech.color }}>
-                    {tech.name.charAt(0)}
-                  </span>
+                  <tech.Icon 
+                    className="w-6 h-6 md:w-7 md:h-7"
+                    style={{ color: tech.color }}
+                  />
                 </div>
                 <p className="text-xs md:text-sm font-medium text-center text-muted-foreground group-hover:text-foreground transition-colors">
                   {tech.name}
@@ -78,8 +104,9 @@ export const TechStack = () => {
             {[...technologies, ...technologies].map((tech, index) => (
               <div
                 key={`marquee-${index}`}
-                className="flex-shrink-0 px-5 py-2.5 rounded-full bg-card/80 border border-border text-sm font-medium text-muted-foreground whitespace-nowrap"
+                className="flex-shrink-0 px-5 py-2.5 rounded-full bg-card/80 border border-border text-sm font-medium text-muted-foreground whitespace-nowrap flex items-center gap-2"
               >
+                <tech.Icon className="w-4 h-4" style={{ color: tech.color }} />
                 {tech.name}
               </div>
             ))}
