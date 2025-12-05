@@ -4,17 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-// Placeholder project images - replace with actual screenshots
-const projectImages: Record<string, string> = {
-  "E-Commerce Platform": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-  "Plataforma E-Commerce": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-  "Task Management App": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-  "App de Gestión de Tareas": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-  "AI Content Generator": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
-  "Generador de Contenido IA": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
-  "Finance Dashboard": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-  "Dashboard Financiero": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-};
+const DEFAULT_PROJECT_IMAGE = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop";
 
 export const Projects = () => {
   const { t } = useLanguage();
@@ -56,7 +46,7 @@ export const Projects = () => {
                 {/* Project Image */}
                 <div className="relative h-48 md:h-56 overflow-hidden">
                   <motion.img
-                    src={projectImages[project.title] || "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"}
+                    src={project.image || DEFAULT_PROJECT_IMAGE}
                     alt={project.title}
                     className="w-full h-full object-cover"
                     whileHover={{ scale: 1.1 }}

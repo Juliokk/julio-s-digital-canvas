@@ -37,6 +37,9 @@ export const translations = {
       title: "Experience & Education",
       subtitle: "My professional journey and academic background",
       present: "Present",
+      visitCompany: "Company",
+      visitInstitution: "Institution",
+      viewCertificate: "Certificate",
       jobs: [
         {
           title: "Digital Transformation & Dev Lead",
@@ -93,6 +96,7 @@ export const translations = {
           tech: ["React", "Node.js", "PostgreSQL", "Docker"],
           github: "https://github.com/Juliorubiodev",
           demo: "#",
+          image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
         },
         {
           title: "AI Agro-Tech Solution",
@@ -101,6 +105,7 @@ export const translations = {
           tech: ["Python", "TensorFlow", "C++", "React"],
           github: "https://github.com/Juliorubiodev",
           demo: null,
+          image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
         },
         {
           title: "E-Commerce Platforms",
@@ -109,6 +114,7 @@ export const translations = {
           tech: ["Next.js", "TypeScript", "MongoDB", "Tailwind CSS"],
           github: "https://github.com/Juliorubiodev",
           demo: "#",
+          image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
         },
         {
           title: "Cross-Platform Mobile Apps",
@@ -117,6 +123,7 @@ export const translations = {
           tech: ["Flutter", "Dart", "Kotlin", "Firebase"],
           github: "https://github.com/Juliorubiodev",
           demo: "#",
+          image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop",
         },
       ],
     },
@@ -170,6 +177,9 @@ export const translations = {
       title: "Experiencia y Educación",
       subtitle: "Mi trayectoria profesional y formación académica",
       present: "Presente",
+      visitCompany: "Empresa",
+      visitInstitution: "Institución",
+      viewCertificate: "Certificado",
       jobs: [
         {
           title: "Líder de Desarrollo y Transformación Digital",
@@ -225,6 +235,7 @@ export const translations = {
           tech: ["React", "Node.js", "PostgreSQL", "Docker"],
           github: "https://github.com/Juliorubiodev",
           demo: "#",
+          image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
         },
         {
           title: "Solución IA Agro-Tech",
@@ -233,6 +244,7 @@ export const translations = {
           tech: ["Python", "TensorFlow", "C++", "React"],
           github: "https://github.com/Juliorubiodev",
           demo: null,
+          image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
         },
         {
           title: "Plataformas E-Commerce",
@@ -241,6 +253,7 @@ export const translations = {
           tech: ["Next.js", "TypeScript", "MongoDB", "Tailwind CSS"],
           github: "https://github.com/Juliorubiodev",
           demo: "#",
+          image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
         },
         {
           title: "Apps Móviles Multiplataforma",
@@ -249,6 +262,7 @@ export const translations = {
           tech: ["Flutter", "Dart", "Kotlin", "Firebase"],
           github: "https://github.com/Juliorubiodev",
           demo: "#",
+          image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop",
         },
       ],
     },
