@@ -8,9 +8,10 @@ const EMAIL = "juliorubiodev@gmail.com";
 
 interface EmailCopyButtonProps {
   variant?: "hero" | "footer";
+  className?: string;
 }
 
-export const EmailCopyButton = ({ variant = "hero" }: EmailCopyButtonProps) => {
+export const EmailCopyButton = ({ variant = "hero", className = "" }: EmailCopyButtonProps) => {
   const [copied, setCopied] = useState(false);
   const { t } = useLanguage();
 
@@ -32,6 +33,9 @@ export const EmailCopyButton = ({ variant = "hero" }: EmailCopyButtonProps) => {
     }
   };
 
+  // Default margins based on variant, can be overridden via className
+  const defaultMargin = variant === "footer" ? "mt-6" : "";
+
   return (
     <motion.button
       onClick={handleCopy}
@@ -42,8 +46,8 @@ export const EmailCopyButton = ({ variant = "hero" }: EmailCopyButtonProps) => {
         hover:border-primary/50 hover:bg-card/80
         text-muted-foreground hover:text-foreground
         transition-all duration-200
-        ${variant === "footer" ? "mt-6" : "mt-8"}
-      `}
+        ${defaultMargin} ${className}
+      `.trim()}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       initial={{ opacity: 0, y: 10 }}
