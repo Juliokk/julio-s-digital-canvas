@@ -1,103 +1,115 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Download } from "lucide-react";
+import { Mail, Heart, Github, Linkedin, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { EmailCopyButton } from "./EmailCopyButton";
+import { EmailCopyButton } from "@/components/EmailCopyButton";
+
+const smoothTransition = {
+  duration: 0.7,
+  ease: "easeOut" as const,
+};
 
 export const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer id="contact" className="py-20 md:py-32 relative">
-      <div className="container-wide section-padding">
-        {/* TOP SECTION - Call to Action */}
+    <footer id="contact" className="py-24 md:py-32 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex flex-col items-center text-center"
-        >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent mb-6">
-            {t.footer.cta}
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-12">
-            {t.footer.ctaSubtitle}
-          </p>
+          className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.2, 0.3, 0.2],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 [&_button]:leading-relaxed [&_button]:overflow-visible">
-            <Button
-              variant="hero"
-              size="xl"
-              onClick={() => window.location.href = "mailto:juliorubiodev@gmail.com"}
-            >
-              <Mail className="w-5 h-5 mr-2" />
-              {t.footer.contact}
-            </Button>
-            <Button
-              variant="heroOutline"
-              size="xl"
-              asChild
-            >
-              <a href="/Julio_Rubio_CV.pdf" download>
-                <Download className="w-5 h-5 mr-2" />
-                {t.footer.resume}
-              </a>
-            </Button>
-          </div>
+      <div className="container-wide section-padding relative z-10">
+        <div className="max-w-3xl mx-auto text-center">
+          {/* CTA Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={smoothTransition}
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              {t.footer.ready}
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground mb-10">
+              {t.footer.letsTalk}
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button variant="hero" size="xl" asChild className="h-14 min-w-[200px]">
+                <a href="mailto:juliorubiodev@gmail.com">
+                  <Mail className="w-5 h-5 mr-2" />
+                  {t.footer.contactMe}
+                </a>
+              </Button>
+              <Button variant="outline" size="xl" asChild className="h-14 min-w-[200px]">
+                <a href="/Julio_Rubio_CV.pdf" download>
+                  <Download className="w-5 h-5 mr-2" />
+                  {t.footer.downloadResume}
+                </a>
+              </Button>
+            </div>
+            
+            {/* Email Copy Button */}
+            <div className="flex justify-center">
+              <EmailCopyButton variant="footer" />
+            </div>
+          </motion.div>
 
-          {/* Email Copy - Centered */}
-          <div className="flex justify-center w-full mt-6 mb-8">
-            <EmailCopyButton variant="footer" />
-          </div>
-
-          {/* Social Icons */}
-          <div className="flex items-center justify-center gap-5">
+          {/* Social Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ ...smoothTransition, delay: 0.15 }}
+            className="flex justify-center gap-4 mt-12"
+          >
             <motion.a
               href="https://github.com/Juliorubiodev"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-4 rounded-full bg-card/80 border border-border hover:border-primary/50 text-muted-foreground hover:text-primary transition-all duration-300 shadow-lg"
-              whileHover={{ y: -3, scale: 1.1 }}
+              className="p-3 rounded-full bg-secondary hover:bg-secondary/80 text-foreground transition-all hover:scale-110"
+              whileHover={{ y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Github className="w-6 h-6" />
+              <Github className="w-5 h-5" />
             </motion.a>
             <motion.a
               href="https://www.linkedin.com/in/juliocrubiom/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-4 rounded-full bg-card/80 border border-border hover:border-primary/50 text-muted-foreground hover:text-primary transition-all duration-300 shadow-lg"
-              whileHover={{ y: -3, scale: 1.1 }}
+              className="p-3 rounded-full bg-secondary hover:bg-secondary/80 text-foreground transition-all hover:scale-110"
+              whileHover={{ y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Linkedin className="w-6 h-6" />
+              <Linkedin className="w-5 h-5" />
             </motion.a>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* Divider */}
-        <div className="border-t border-border/50 mt-20 mb-12 max-w-md mx-auto" />
-
-        {/* BOTTOM SECTION - Signature */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-          className="text-center space-y-2"
-        >
-          <p className="text-base md:text-lg font-medium text-foreground/80">
-            {t.footer.name} · {t.footer.title}
-          </p>
-          <p className="text-sm text-muted-foreground">
-            {t.footer.tagline}
-          </p>
-          <p className="text-xs text-muted-foreground/60 pt-2">
-            {t.footer.copyright}
-          </p>
-        </motion.div>
+          {/* Copyright */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ ...smoothTransition, delay: 0.25 }}
+            className="mt-16 pt-8 border-t border-border"
+          >
+            <p className="text-sm text-muted-foreground flex items-center justify-center gap-1">
+              © 2024 Julio Rubio. Built with React &{" "}
+              <Heart className="w-4 h-4 text-destructive fill-destructive" />
+            </p>
+          </motion.div>
+        </div>
       </div>
     </footer>
   );

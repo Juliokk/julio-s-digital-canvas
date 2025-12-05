@@ -83,7 +83,7 @@ export const Experience = () => {
                         <Button variant="outline" size="sm" asChild>
                           <a href={job.companyUrl} target="_blank" rel="noopener noreferrer">
                             <ExternalLink className="w-3 h-3 mr-1" />
-                            {job.type === "work" ? t.experience.visitWebsite : t.experience.visitInstitution}
+                            {job.type === "work" ? "Company" : "Institution"}
                           </a>
                         </Button>
                       )}
@@ -91,7 +91,7 @@ export const Experience = () => {
                         <Button variant="ghost" size="sm" asChild>
                           <a href={job.certificateUrl} target="_blank" rel="noopener noreferrer">
                             <Award className="w-3 h-3 mr-1" />
-                            {t.experience.viewCertificate}
+                            Certificate
                           </a>
                         </Button>
                       )}

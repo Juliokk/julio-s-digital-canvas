@@ -36,13 +36,13 @@ export const EmailCopyButton = ({ variant = "hero" }: EmailCopyButtonProps) => {
     <motion.button
       onClick={handleCopy}
       className={`
-        group flex items-center gap-2 px-5 py-3 rounded-full
-        font-mono text-sm whitespace-nowrap leading-relaxed overflow-visible
+        group flex items-center gap-2 px-4 py-2 rounded-full
+        font-mono text-sm
         bg-card/60 backdrop-blur-sm border border-border/50
         hover:border-primary/50 hover:bg-card/80
         text-muted-foreground hover:text-foreground
         transition-all duration-200
-        ${variant === "footer" ? "" : "mt-8"}
+        ${variant === "footer" ? "mt-6" : "mt-8"}
       `}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
