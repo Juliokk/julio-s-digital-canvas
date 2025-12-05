@@ -26,19 +26,18 @@ export const Footer = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
-              size="lg"
-              className="min-w-[200px] px-8 py-6 text-lg font-semibold"
+              variant="hero"
+              size="xl"
               onClick={() => window.location.href = "mailto:juliorubiodev@gmail.com"}
             >
               <Mail className="w-5 h-5 mr-2" />
               {t.footer.contact}
             </Button>
             <Button
-              variant="outline"
-              size="lg"
-              className="min-w-[200px] px-8 py-6 text-lg font-semibold"
+              variant="heroOutline"
+              size="xl"
               asChild
             >
               <a href="/Julio_Rubio_CV.pdf" download>
@@ -49,7 +48,7 @@ export const Footer = () => {
           </div>
 
           {/* Email Copy - Centered */}
-          <div className="flex justify-center w-full mb-8">
+          <div className="flex justify-center w-full mt-6 mb-8">
             <EmailCopyButton variant="footer" />
           </div>
 
