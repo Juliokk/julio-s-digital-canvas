@@ -21,12 +21,12 @@ export const Footer = () => {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent mb-6">
             {t.footer.cta}
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-10">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-12">
             {t.footer.ctaSubtitle}
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 [&_button]:leading-relaxed [&_button]:overflow-visible">
             <Button
               variant="hero"
               size="xl"
@@ -78,7 +78,7 @@ export const Footer = () => {
         </motion.div>
 
         {/* Divider */}
-        <div className="border-t border-border/50 my-16 max-w-md mx-auto" />
+        <div className="border-t border-border/50 mt-20 mb-12 max-w-md mx-auto" />
 
         {/* BOTTOM SECTION - Signature */}
         <motion.div

@@ -36,8 +36,8 @@ export const EmailCopyButton = ({ variant = "hero" }: EmailCopyButtonProps) => {
     <motion.button
       onClick={handleCopy}
       className={`
-        group flex items-center gap-2 px-5 py-2.5 rounded-full
-        font-mono text-sm whitespace-nowrap
+        group flex items-center gap-2 px-5 py-3 rounded-full
+        font-mono text-sm whitespace-nowrap leading-relaxed overflow-visible
         bg-card/60 backdrop-blur-sm border border-border/50
         hover:border-primary/50 hover:bg-card/80
         text-muted-foreground hover:text-foreground
