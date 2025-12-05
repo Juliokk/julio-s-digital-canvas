@@ -112,7 +112,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex justify-center mt-8 mb-10"
+            className="flex justify-center mt-6 mb-10"
           >
             <EmailCopyButton variant="hero" />
           </motion.div>
