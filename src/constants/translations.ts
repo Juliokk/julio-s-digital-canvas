@@ -37,6 +37,9 @@ export const translations = {
       title: "Experience & Education",
       subtitle: "My professional journey and academic background",
       present: "Present",
+      viewCertificate: "Certificate",
+      visitWebsite: "Company",
+      visitInstitution: "Institution",
       jobs: [
         {
           title: "Digital Transformation & Dev Lead",
@@ -121,11 +124,10 @@ export const translations = {
       ],
     },
     footer: {
-      ready: "Ready to start a project?",
-      letsTalk: "Let's build something amazing together.",
-      contactMe: "Contact Me",
-      downloadResume: "Download Resume",
-      copyright: "© 2025 Julio Rubio. Built with React & Love.",
+      name: "Julio Rubio",
+      title: "Computer Engineer",
+      tagline: "Building scalable solutions for complex problems",
+      copyright: "© 2025 · Built with React & Love",
     },
     emailCopy: {
       success: "Email copied to clipboard!",
@@ -170,6 +172,9 @@ export const translations = {
       title: "Experiencia y Educación",
       subtitle: "Mi trayectoria profesional y formación académica",
       present: "Presente",
+      viewCertificate: "Certificado",
+      visitWebsite: "Empresa",
+      visitInstitution: "Institución",
       jobs: [
         {
           title: "Líder de Desarrollo y Transformación Digital",
@@ -253,11 +258,10 @@ export const translations = {
       ],
     },
     footer: {
-      ready: "¿Listo para comenzar un proyecto?",
-      letsTalk: "Construyamos algo increíble juntos.",
-      contactMe: "Contáctame",
-      downloadResume: "Descargar CV",
-      copyright: "© 2025 Julio Rubio. Hecho con React y Amor.",
+      name: "Julio Rubio",
+      title: "Ingeniero Informático",
+      tagline: "Construyendo soluciones escalables para problemas complejos",
+      copyright: "© 2025 · Hecho con React y Amor",
     },
     emailCopy: {
       success: "¡Email copiado al portapapeles!",
