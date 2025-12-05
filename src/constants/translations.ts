@@ -124,6 +124,10 @@ export const translations = {
       ],
     },
     footer: {
+      cta: "Ready to start a project?",
+      ctaSubtitle: "Let's build something amazing together.",
+      contact: "Contact Me",
+      resume: "Download Resume",
       name: "Julio Rubio",
       title: "Computer Engineer",
       tagline: "Building scalable solutions for complex problems",
@@ -258,6 +262,10 @@ export const translations = {
       ],
     },
     footer: {
+      cta: "¿Listo para empezar un proyecto?",
+      ctaSubtitle: "Construyamos algo increíble juntos.",
+      contact: "Contáctame",
+      resume: "Descargar CV",
       name: "Julio Rubio",
       title: "Ingeniero Informático",
       tagline: "Construyendo soluciones escalables para problemas complejos",
